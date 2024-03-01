@@ -1,0 +1,26 @@
+{
+  "name": "twitch-play-chess",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "conc": "concurrently \"npm start\" \"npm run serve\"",
+    "start": "npx webpack --config webpack.config.js && electron .",
+    "serve": "node twitch-bot/server/server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^29.1.0",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@chrisoakman/chessboardjs": "^1.0.0",
+    "chess.js": "^1.0.0-beta.8",
+    "express": "^4.18.3",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "tmi.js": "^1.8.5"
+  }
+}
