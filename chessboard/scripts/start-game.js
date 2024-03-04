@@ -1,6 +1,10 @@
+//CSS
+require("../css/main.css");
+
 const { Chess } = require('chess.js');
 const io = require('socket.io-client');
 const updateStatus = require('./status/update-status');
+const setGameType = require('./set-game-type');
 const socket = io('http://localhost:3000');
 function onSnapEnd () {
     window.board.position(window.game.fen());
@@ -30,7 +34,7 @@ function connectSocket() {
             } else {
                 console.log('Game in progress...');
             }
-        })
+        });
     });
 
     socket.on('disconnect', () => {
@@ -47,7 +51,9 @@ $(document).ready(function() {
         draggable: true,
         position: 'start'
     }
-    window.board = Chessboard('myBoard', config);
+    window.board = Chessboard('chess-board', config);
+
     updateStatus(window.$status);
+    setGameType('Please select Game Type')
     connectSocket();
 });

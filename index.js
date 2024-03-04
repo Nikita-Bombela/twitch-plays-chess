@@ -2,13 +2,13 @@ const { app, BrowserWindow } = require('electron')
 
 const createWindow = () => {
     const win = new BrowserWindow({
-        // width: 450,
-        width: 850,
-        height: 550
+        width: 600,
+        // width: 950,
+        height: 750
     })
 
     win.loadFile('chessboard/html/chessboard.html');
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
 };
 
 app.whenReady().then(() => {
