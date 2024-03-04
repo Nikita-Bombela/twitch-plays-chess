@@ -3,6 +3,9 @@
       href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
       integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
       crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
         crossorigin="anonymous"></script>
@@ -15,9 +18,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-    <body style="background-color: gray">
-        <div id="myBoard" style="width: 400px"></div>
-        <label>Status:</label>
-        <div id="status"></div>
+    <body>
+        <div class="chess-container">
+            <div id="game-title"></div>
+            <div class="player-name" id="player-1">
+                <span id="player-1-name">{{ Player 1 }}</span>
+            </div>
+            <div id="chess-board"></div>
+            <div class="player-name" id="player-2">
+                <span id="player-2-name">{{ Player 2 }}</span>
+            </div>
+            <div id="game-status">
+                <div id="status"></div>
+            </div>
+        </div>
     </body>
 </html>
